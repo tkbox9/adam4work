@@ -100,6 +100,10 @@ bot.dialog('GreetingDialog',
         var card = createCard("HeroCardName", session);
 
         var msg = new builder.Message(session).addAttachment(card);
+        msg.addAttachment(card);
+        msg.addAttachment(card);
+        msg.addAttachment(card);
+
         session.send(msg);
 
        // session.send('Adam: You reached the Greeting intent. You said \'%s\'.', session.message.text);
