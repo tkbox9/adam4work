@@ -136,7 +136,7 @@ bot.dialog('HelpDialog',
         session.send('Im awesome :laughing:...');
         session.send('Also I can help get things done faster just by asking... ');
         session.send('Would you like to book a meeting with a collegue? No problem!.. Or maybe, see when someone is free for a coffee? Just ask me!');
-        session.send('I can even help you to find projects and people with the skill set to help on your current challenge.. Just try me!!! :+1::+1::+1:');
+        session.send('I can even help you to find similar projects and people with the skill set for your current challenge.. Just try me!!! :+1::+1::+1:');
         
         session.endDialog();
     }
