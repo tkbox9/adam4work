@@ -132,15 +132,10 @@ bot.dialog('GreetingDialog',
 
 bot.dialog('HelpDialog',
     (session) => {
-        
-        
-        
-        
+                  
         session.send('Im awesome :laughing:...');
-
         session.send('Also I can help get things done faster just by asking... ');
         session.send('Would you like to book a meeting with a collegue? No problem!.. Or Maybe, see when someone is free for a coffee? Just ask me!');
-
         session.send('I can even help you to find projects and people with the skill set to help on your current challenge.. Just try me!!! :diamonds::diamonds::diamonds:');
         
         session.endDialog();
