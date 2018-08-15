@@ -141,7 +141,7 @@ bot.dialog('HelpDialog',
 
 bot.dialog('Calendar.CheckAvailability',
     (session) => {
-        session.send('You reached the Help intent. You said \'%s\'.', session.message.text);
+        session.send('You reached the CheckAvailability intent. You said \'%s\'.', session.message.text);
         session.endDialog();
     }
 ).triggerAction({
