@@ -132,7 +132,7 @@ bot.dialog('GreetingDialog',
 
 bot.dialog('HelpDialog',
     (session) => {
-        session.send('You reached the Help blah intent. You said \'%s\'.', session.message.text);
+        session.send('Im awesome :laughing:... Also can help get things done faster just by asking? Would you like to book a meeting with a collegue? No problem! Or Maybe, see when someone is free for a coffee? Just ask me! I can even help you to find projects and people with the skill set to help on your current challenge.. Just try me!!! :diamonds::diamonds::diamonds:');
         session.endDialog();
     }
 ).triggerAction({
@@ -153,7 +153,7 @@ bot.dialog('Calendar.CheckAvailability',
 
 bot.dialog('CancelDialog',
     (session) => {
-        session.send('Not a problem. Speak to you soon :ok_hand: :+1:');
+        session.send('Not a problem.:ok_hand: Speak to you soon  :+1:');
         session.endDialog();
     }
 ).triggerAction({
