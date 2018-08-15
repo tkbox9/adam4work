@@ -153,7 +153,7 @@ bot.dialog('Calendar.CheckAvailability',
 
 bot.dialog('CancelDialog',
     (session) => {
-        session.send('You reached the Cancel intent. You said \'%s\'.', session.message.text);
+        session.send('Not a problem. Speak to you soon :ok_hand:');
         session.endDialog();
     }
 ).triggerAction({
