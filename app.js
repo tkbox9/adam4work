@@ -56,7 +56,7 @@ bot.recognizer(recognizer);
 // See https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-recognize-intent-luis 
 bot.dialog('GreetingDialog',
     (session) => {
-        session.send('You reached the Greeting intent. You said \'%s\'.', session.message.text);
+        session.send('Adam: You reached the Greeting intent. You said \'%s\'.', session.message.text);
         session.endDialog();
     }
 ).triggerAction({
