@@ -147,7 +147,7 @@ bot.dialog('HelpDialog',
 //added
 bot.dialog('Calendar.CheckAvailability',
     (session) => {
-        session.send('Hi my name is Adam :) Nice to meet you and just so you know… I am Eva’s better half!!!');
+        session.send('Hi my name is Adam :) Nice to meet you and just so you know… I am Eva’s better half :heart:');
         session.send('Go on dont be shine :laughing:... ask me what I can do ...');
 
         
