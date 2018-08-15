@@ -52,11 +52,57 @@ const LuisModelUrl = 'https://' + luisAPIHostName + '/luis/v2.0/apps/' + luisApp
 var recognizer = new builder.LuisRecognizer(LuisModelUrl);
 bot.recognizer(recognizer);
 
+var HeroCardName = 'Hero card';
+var ThumbnailCardName = 'Thumbnail card';
+var ReceiptCardName = 'Receipt card';
+var SigninCardName = 'Sign-in card';
+var AnimationCardName = "Animation card";
+var VideoCardName = "Video card";
+var AudioCardName = "Audio card";
+var CardNames = [HeroCardName, ThumbnailCardName, ReceiptCardName, SigninCardName, AnimationCardName, VideoCardName, AudioCardName];
+
+
+function createCard(selectedCardName, session) {
+    switch (selectedCardName) {
+        case HeroCardName:
+            return createHeroCard(session);
+        default:
+            return createHeroCard(session);
+    }
+}
+    function createHeroCard(session) {
+        return new builder.HeroCard(session)
+            .title('BotFramework Hero Card')
+            .subtitle('Your bots — wherever your users are talking')
+            .text('Build and connect intelligent bots to interact with your users naturally wherever they are, from text/sms to Skype, Slack, Office 365 mail and other popular services.')
+            .images([
+                builder.CardImage.create(session, 'https://sec.ch9.ms/ch9/7ff5/e07cfef0-aa3b-40bb-9baa-7c9ef8ff7ff5/buildreactionbotframework_960.jpg')
+            ])
+            .buttons([
+                builder.CardAction.openUrl(session, 'https://docs.microsoft.com/bot-framework/', 'Get Started')
+            ]);
+    }
+
+
+
+
+
+
+
+
+
+
 // Add a dialog for each intent that the LUIS app recognizes.
 // See https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-recognize-intent-luis 
 bot.dialog('GreetingDialog',
     (session) => {
-        session.send('Adam: You reached the Greeting intent. You said \'%s\'.', session.message.text);
+
+        var card = createCard("HeroCardName", session);
+
+        var msg = new builder.Message(session).addAttachment(card);
+        session.send(msg);
+
+       // session.send('Adam: You reached the Greeting intent. You said \'%s\'.', session.message.text);
         session.endDialog();
     }
 ).triggerAction({
