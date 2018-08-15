@@ -153,7 +153,7 @@ bot.dialog('Calendar.CheckAvailability',
 
 bot.dialog('CancelDialog',
     (session) => {
-        session.send('Not a problem. Speak to you soon :ok_hand:');
+        session.send('Not a problem. Speak to you soon :ok_hand: :+1:');
         session.endDialog();
     }
 ).triggerAction({
