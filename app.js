@@ -132,7 +132,7 @@ bot.dialog('GreetingDialog',
 
 bot.dialog('HelpDialog',
     (session) => {
-        session.send('You reached the Help intent. You said \'%s\'.', session.message.text);
+        session.send('You reached the Help blah intent. You said \'%s\'.', session.message.text);
         session.endDialog();
     }
 ).triggerAction({
