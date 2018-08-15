@@ -118,7 +118,9 @@ bot.dialog('GreetingDialog',
     (session) => {
 
         var cards = createCards(session);
-        var msg = new builder.Message(session).addAttachment(cards);
+        var msg = new builder.Message(session)
+            .attachmentLayout(builder.AttachmentLayout.carousel)
+            .attachments(cards);
 
         session.send(msg);
        // session.send('Adam: You reached the Greeting intent. You said \'%s\'.', session.message.text);
