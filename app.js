@@ -139,13 +139,14 @@ bot.dialog('HelpDialog',
     matches: 'Help'
 })
 
+//added
 bot.dialog('Calendar.CheckAvailability',
     (session) => {
         session.send('You reached the CheckAvailability intent. You said \'%s\'.', session.message.text);
         session.endDialog();
     }
 ).triggerAction({
-    matches: 'Help'
+    matches: 'Calendar.CheckAvailability'
 })
 
 
