@@ -139,6 +139,17 @@ bot.dialog('HelpDialog',
     matches: 'Help'
 })
 
+bot.dialog('Calendar.CheckAvailability',
+    (session) => {
+        session.send('You reached the Help intent. You said \'%s\'.', session.message.text);
+        session.endDialog();
+    }
+).triggerAction({
+    matches: 'Help'
+})
+
+
+
 bot.dialog('CancelDialog',
     (session) => {
         session.send('You reached the Cancel intent. You said \'%s\'.', session.message.text);
