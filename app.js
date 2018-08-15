@@ -147,7 +147,7 @@ bot.dialog('HelpDialog',
 //added
 bot.dialog('Calendar.CheckAvailability',
     (session) => {
-        session.send('You reached the CheckAvailability intent. You said \'%s\'.', session.message.text);
+        session.send('Hi my name is Adam :) Nice to meet you and just so you know… I am Eva’s better half!!!');
         session.endDialog();
     }
 ).triggerAction({
