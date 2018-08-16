@@ -28,8 +28,14 @@ server.post('/api/messages', connector.listen());
 * For samples and documentation, see: https://github.com/Microsoft/BotBuilder-Azure
 * ---------------------------------------------------------------------------------------- */
 
+
 var tableName = 'botdata';
-var azureTableClient = new botbuilder_azure.AzureTableClient(tableName, process.env['AzureWebJobsStorage']);
+
+
+var azureTableClient = new botbuilder_azure.AzureTableClient(tableName, 'DefaultEndpointsProtocol=https;AccountName=adam4workbot;AccountKey=oBrA9LEi1DD5MRG3ViOyC2ZVSlU/LSInPJXPaaUn5LqWjEtr8awNR6tdr2xI3DvZwAryTReDNMFw+NZQk/Lo4g==;');
+
+
+//var azureTableClient = new botbuilder_azure.AzureTableClient(tableName, process.env['AzureWebJobsStorage']);
 var tableStorage = new botbuilder_azure.AzureBotStorage({ gzipData: false }, azureTableClient);
 
 // Create your bot with a function to receive messages from the user
@@ -42,8 +48,8 @@ var bot = new builder.UniversalBot(connector, function (session, args) {
 bot.set('storage', tableStorage);
 
 // Make sure you add code to validate these fields
-var luisAppId = process.env.LuisAppId;
-var luisAPIKey = process.env.LuisAPIKey;
+var luisAppId = process.env.LuisAppId || '1f702674-f8d4-4550-acee-d3f86ebe736d';
+var luisAPIKey = process.env.LuisAPIKey || '44f7274d49d1400c81e1897ba2c9f1cc';
 var luisAPIHostName = process.env.LuisAPIHostName || 'westus.api.cognitive.microsoft.com';
 
 const LuisModelUrl = 'https://' + luisAPIHostName + '/luis/v2.0/apps/' + luisAppId + '?subscription-key=' + luisAPIKey;
@@ -116,6 +122,8 @@ function createCards(session) {
 // See https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-recognize-intent-luis 
 bot.dialog('GreetingDialog',
     (session) => {
+        session.sendTyping();
+
 
         var cards = createCards(session);
         var msg = new builder.Message(session)
